@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desaparecidos en Mexico</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Desaparecidos en México</h1>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&callback=initMap">
+    </script>
+        <script>
+            function initMap() {
+                google.charts.load('current', {
+          'packages':['geochart'],
+          // Note: you will need to get a mapsApiKey for your project.
+          // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+          'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+        
+        
+            function drawRegionsMap() {
+                var states = [{"code":"MX-MEX","name":"ESTADO DE MEXICO","value":1888},{"code":"MX-PUE","name":"PUEBLA","value":769},{"code":"MX-TAM","name":"TAMAULIPAS","value":716},{"code":"MX-NLE","name":"NUEVO LEON","value":473},{"code":"MX-SIN","name":"SINALOA","value":453},{"code":"MX-CHH","name":"CHIHUAHUA","value":435},{"code":"MX-BCN","name":"BAJA CALIFORNIA","value":434},{"code":"MX-SON","name":"SONORA","value":260},{"code":"MX-GRO","name":"GUERRERO","value":256},{"code":"MX-JAL","name":"JALISCO","value":251},{"code":"MX-MEX","name":"CIUDAD DE MEXICO","value":241},{"code":"MX-COA","name":"COAHUILA DE ZARAGOZA","value":188},{"code":"MX-MIC","name":"MICHOACAN","value":144},{"code":"MX-GUA","name":"GUANAJUATO","value":134},{"code":"MX-QUE","name":"QUERETARO","value":118},{"code":"MX-VER","name":"VERACRUZ","value":107},{"code":"MX-MOR","name":"MORELOS","value":93},{"code":"MX-AGU","name":"AGUASCALIENTES","value":82},{"code":"MX-HID","name":"HIDALGO","value":77},{"code":"MX-ZAC","name":"ZACATECAS","value":67},{"code":"MX-COL","name":"COLIMA","value":63},{"code":"MX-CHP","name":"CHIAPAS","value":47},{"code":"MX-DUR","name":"DURANGO","value":45},{"code":"MX-OAX","name":"OAXACA","value":42},{"code":"MX-TAB","name":"TABASCO","value":27},{"code":"MX-ROO","name":"QUINTANA ROO","value":27},{"code":"MX-CAM","name":"CAMPECHE","value":23},{"code":"MX-YUC","name":"YUCATAN","value":19},{"code":"MX-SLP","name":"SAN LUIS POTOSI","value":12},{"code":"MX-NAY","name":"NAYARIT","value":10},{"code":"0000","name":"NO ESPECIFICADO","value":8},{"code":"MX-TLA","name":"TLAXCALA","value":7},{"code":"MX-BCS","name":"BAJA CALIFORNIA SUR","value":3}]
+                var datatable = [['State', 'Foo Factor']]
+                states.forEach((el)=> {
+                    if (el['code']=='0000') {
+                        return
+                    }
+                    datatable.push([el['code'], el['value']])
+                })
+                
+                var data = google.visualization.arrayToDataTable(datatable);
+    
+    
+            var options = {};
+    
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    
+            chart.draw(data, {width: 556, height: 347, region: "MX", resolution: "provinces", colorAxis: {colors: ['#F3F7FA', '#C42306']}});
+            }
+        }
+      </script>
+</body>
+</html>
