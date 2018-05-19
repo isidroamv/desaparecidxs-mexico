@@ -1,0 +1,226 @@
+{
+    "1": {
+      "name": "Aguascalientes",
+      "code": "MX-AGU",
+      "number": 1,
+      "subdivision": "state",
+      "val": 0.615545425510293
+    },
+    "2": {
+      "name": "Baja California",
+      "code": "MX-BCN",
+      "number": 2,
+      "subdivision": "state",
+      "val": 0.11323713016462937
+    },
+    "3": {
+      "name": "Baja California Sur",
+      "code": "MX-BCS",
+      "number": 3,
+      "subdivision": "state",
+      "val": 0.11323713016462937
+    },
+    "4": {
+      "name": "Campeche",
+      "code": "MX-CAM",
+      "number": 4,
+      "subdivision": "state",
+      "val": 0.12485119479689905
+    },
+    "5": {
+      "name": "Coahuila",
+      "code": "MX-COA",
+      "number": 5,
+      "subdivision": "state",
+      "val": 4.694985627595018
+    },
+    "6": {
+      "name": "Colima",
+      "code": "MX-COL",
+      "number": 6,
+      "subdivision": "state",
+      "val": 0.9029935251589675
+    },
+    "7": {
+      "name": "Chiapas",
+      "code": "MX-CHP",
+      "number": 7,
+      "subdivision": "state",
+      "val": 0.26131645422606775
+    },
+    "8": {
+      "name": "Chihuahua",
+      "code": "MX-CHH",
+      "number": 8,
+      "subdivision": "state",
+      "val": 6.129322609680323
+    },
+    "9": {
+      "name": "Distrito Federal",
+      "code": "MX-DIF",
+      "number": 9,
+      "subdivision": "federal district",
+      "val": 2.1195667953892166
+    },
+    "10": {
+      "name": "Durango",
+      "code": "MX-DUR",
+      "number": 10,
+      "subdivision": "state",
+      "val": 1.1730205278592376
+    },
+    "11": {
+      "name": "Guanajuato",
+      "code": "MX-GUA",
+      "number": 11,
+      "subdivision": "state",
+      "val": 2.0092331813826543
+    },
+    "12": {
+      "name": "Guerrero",
+      "code": "MX-GRO",
+      "number": 12,
+      "subdivision": "state",
+      "val": 4.14041404140414
+    },
+    "13": {
+      "name": "Hidalgo",
+      "code": "MX-HID",
+      "number": 13,
+      "subdivision": "state",
+      "val": 0.5197293922940681
+    },
+    "14": {
+      "name": "Jalisco",
+      "code": "MX-JAL",
+      "number": 14,
+      "subdivision": "state",
+      "val": 8.646671118724775
+    },
+    "15": {
+      "name": "México",
+      "code": "MX-MEX",
+      "number": 15,
+      "subdivision": "state",
+      "val": 13.00775238814204
+    },
+    "16": {
+      "name": "Michoacán",
+      "code": "MX-MIC",
+      "number": 16,
+      "subdivision": "state",
+      "val": 3.045788449812723
+    },
+    "17": {
+      "name": "Morelos",
+      "code": "MX-MOR",
+      "number": 17,
+      "subdivision": "state",
+      "val": 0.8245985888911472
+    },
+    "18": {
+      "name": "Nayarit",
+      "code": "MX-NAY",
+      "number": 18,
+      "subdivision": "state",
+      "val": 0.415202810603641
+    },
+    "19": {
+      "name": "Nuevo León",
+      "code": "MX-NLE",
+      "number": 19,
+      "subdivision": "state",
+      "val": 7.543334978659156
+    },
+    "20": {
+      "name": "Oaxaca",
+      "code": "MX-OAX",
+      "number": 20,
+      "subdivision": "state",
+      "val": 0.3687465520745623
+    },
+    "21": {
+      "name": "Puebla",
+      "code": "MX-PUE",
+      "number": 21,
+      "subdivision": "state",
+      "val": 5.168258761360007
+    },
+    "22": {
+      "name": "Querétaro",
+      "code": "MX-QUE",
+      "number": 22,
+      "subdivision": "state",
+      "val": 1.1033361400656194
+    },
+    "23": {
+      "name": "Quintana Roo",
+      "code": "MX-ROO",
+      "number": 23,
+      "subdivision": "state",
+      "val": 0.22937777648732616
+    },
+    "24": {
+      "name": "San Luis Potosí",
+      "code": "MX-SLP",
+      "number": 24,
+      "subdivision": "state",
+      "val": 0.27293051885833747
+    },
+    "25": {
+      "name": "Sinaloa",
+      "code": "MX-SIN",
+      "number": 25,
+      "subdivision": "state",
+      "val": 9.178014575651114
+    },
+    "26": {
+      "name": "Sonora",
+      "code": "MX-SON",
+      "number": 26,
+      "subdivision": "state",
+      "val": 3.742632327748904
+    },
+    "27": {
+      "name": "Tabasco",
+      "code": "MX-TAB",
+      "number": 27,
+      "subdivision": "state",
+      "val": 0.19453558259051712
+    },
+    "28": {
+      "name": "Tamaulipas",
+      "code": "MX-TAM",
+      "number": 28,
+      "subdivision": "state",
+      "val": 17.034929299381552
+    },
+    "29": {
+      "name": "Tlaxcala",
+      "code": "MX-TLA",
+      "number": 29,
+      "subdivision": "state",
+      "val": 0.06968438779361807
+    },
+    "30": {
+      "name": "Veracruz",
+      "code": "MX-VER",
+      "number": 30,
+      "subdivision": "state",
+      "val": 1.5185389506692604
+    },
+    "31": {
+      "name": "Yucatán",
+      "code": "MX-YUC",
+      "number": 31,
+      "subdivision": "state",
+      "val": 0.2555094219099329
+    },
+    "32": {
+      "name": "Zacatecas",
+      "code": "MX-ZAC",
+      "number": 32,
+      "subdivision": "state",
+      "val": 1.515635434511193
+    }
+  }

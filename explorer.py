@@ -23,31 +23,45 @@ is_feamale = df['fuerocomun_sexo'] == 'MUJER'
 is_male = df['fuerocomun_sexo'] == 'HOMBRE'
 is_slim = df['fuerocomun_complexion'] == 'Robusta'
 is_incomplete = df['identificado'] == 'incompleto'
-is_from_jalisco = df['fuerocomun_desapentidad'].str.contains("JALISCO")
+is_from_jalisco = df['fuerocomun_desapfecha'].str.contains("/2012")
+
+df['fuerocomun_desapfecha'] = pd.to_datetime(df['fuerocomun_desapfecha'], format='%d/%m/%Y', utc=True, errors='coerce')
+
+df = df[is_from_jalisco]
+# Count records by year
+keys = {}
+labels = []
+for i in range(12):
+    key = "%02d" % (i + 1)
+    labels.append(key)
+    keys[key] = 0
 
 
-def group_by_height(d):
+weekday_list = {}
+for i in range(7):
+    weekday_list[str(i)] = 0
+for el in df['fuerocomun_desapfecha']:
+    weekday = el.weekday()
+    if type(weekday) is int:
+        weekday_list[str(weekday)] += 1
 
-    height_data = {}
-    for val_key in d.iteritems():
-        height = str(val_key[0])
-        value = val_key[1]
-        key = height[0:3]
-        height_data[key] = height_data.get(key, 0) + value
+print("weekday", weekday_list)
+exit()
 
-    label = []
-    values = []
-    for key, value in height_data.items():
-        label.append(key)
-        values.append(value)
-    
-    return label, values
+sum_total = len(df)
+print("total", sum_total)
 
-fd = df[is_feamale]['fuerocomun_estatura'].value_counts()
-md = df[is_male]['fuerocomun_estatura'].value_counts()
-
-flabel, fvalues = group_by_height(fd)
-mlabel, mvalues = group_by_height(md)
+values = []
+values2 = []
+for k in keys:
+    kdformat = '/'+k+'/'
+    df_filtered = df['fuerocomun_desapfecha'].str.contains(kdformat)
+    #print(df[df_filtered]['fuerocomun_desapfecha'])
+    df_filtered2 = df['fuerocomun_desapfecha'].str.contains('2015') 
+    total = len(df[df_filtered])
+    values.append(total)
+    values2.append(total * 100 / sum_total)
+    print("len", k, total * 100 / sum_total)
 
 # Generate Chart
 colors = ['#3366cc','#dc3912','#ff9900','#109618','#990099',
@@ -57,17 +71,15 @@ colors = ['#3366cc','#dc3912','#ff9900','#109618','#990099',
  '#3b3eac','#b77322','#16d620','#b91383','#f4359e',
  '#9c5935','#a9c413','#2a778d','#668d1c','#bea413',
  '#0c5922','#743411']
+months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+    "Julio", "Agosto", "Septiembre", "Noviembre", "Diciembre"]
 
-# Female
-fig1, ax1 = plt.subplots()
-plt.title('Estatura de Mujeres desaparecidas en México')
-ax1.pie(fvalues, labels=flabel, autopct='%1.1f%%', shadow=True, startangle=90, colors=colors)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.show()
+ # Show Chart
+plt.scatter(labels, values, values, c=colors, alpha=0.4)
+plt.grid(color='#D3D3D3', linestyle='-', linewidth=1)
+plt.xticks(labels)
+plt.title("Desaparecidos por mes")
+for i, txt in enumerate(months):
+    plt.annotate(str(txt), (labels[i], values[i]))
 
-# Male
-fig1, ax1 = plt.subplots()
-plt.title('Estatura de Hombres desaparecidos en México')
-ax1.pie(mvalues, labels=mlabel, autopct='%1.1f%%', shadow=True, startangle=90, colors=colors)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 plt.show()
